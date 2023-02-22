@@ -34,10 +34,14 @@ BECAUSE 82% of breaches involve a human element, so even basic knowledge is cruc
 
 With access to your personal information, malicious users can cause a lot of damage. It’s therefore important to protect yourself from keyloggers so you don’t become a victim. You can reduce the likelihood of an attack by learning what behaviors can make you vulnerable to keylogger attacks and what precautions can be taken. According to Verizon’s 2022 Data Breach Investigations Report, 82% of breaches involve a human element. By being aware of the dangers, you can bolster your cybersecurity in order to better protect yourself / your organization against keylogger attacks. This is why our team at NLOX found it so vital to create our own keylogger as a way to better understand its uses and threat potential. 
 
-Q4: Supportive Data/Source Code 📊
+Q4: Supportive Data 📊
 
 Our presentation will not only go into detail on what a keylogger is but we will also demonstrate how to create one (image 2) and how it functions (image 1). Below you will find images of the script we created to make our own keylogger. This script is designed to only work and save a "log file" to the host machine and is intended to be used like a parental control for informative purposes only. *This process will be further elaborated on in our video presentation.
 We also intend to conduct extensive research on keyloggers usage in past known attacks such as "Darkhotel". a well-known keylogger malware attack that targeted unsecure Wi-Fi at hotels. While also making sure the presentation demonstrates the ethical uses of keyloggers.
+
+Q5: The Result/Source Code 🧩
+
+Our end will result will be an informative video presentation outlining our research. The presentation will outline our research on keyloggers. the steps we took to create our own, uses of keyloggers, and actions one can take against keyloggers. Roles: Nicole Iovino (Group Leader, Video editor), Luis Calderon (Scripting Examples Presentation), O'Shayia Langston (Ethical Uses of Keylogger), Xiong Zheng (Malware/Unethical Uses). Each team member will have a slide presenting a part of our groups overall research and created tools. The video will be between 3:00 - 5:00 minutes in length and displayed to our fellow classmates upon graduation.
 
 Source Code:
 #! /usr/bin/env python3
@@ -63,10 +67,3 @@ new_hook.KeyDown = OnKeyPress
 new_hook.HookKeyboard()
 # Enter the event listener loop, which will keep the program running until it is stopped
 new_hook.start()
-
-
-Q5: The Result 🧩
-
-Our end will result will be an informative video presentation outlining our research. The presentation will outline our research on keyloggers. the steps we took to create our own, uses of keyloggers, and actions one can take against keyloggers. Roles: Nicole Iovino (Group Leader, Video editor), Luis Calderon (Scripting Examples Presentation), O'Shayia Langston (Ethical Uses of Keylogger), Xiong Zheng (Malware/Unethical Uses). Each team member will have a slide presenting a part of our groups overall research and created tools. The video will be between 3:00 - 5:00 minutes in length and displayed to our fellow classmates upon graduation.
-
-
